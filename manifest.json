@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "name": "Ultimate AI Ethical Hacking Assistant",
+  "version": "1.0",
+  "description": "AI-powered ethical hacking assistant",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "contextMenus"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "options_page": "options.html",
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Ultimate AI Ethical Hacking Assistant",
+    "default_popup": "popup.html"
+  }
+}
